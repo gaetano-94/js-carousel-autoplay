@@ -27,6 +27,18 @@ for (let i = 0; i < images.length; i++) {
 }
 
 const domItems = document.querySelectorAll('.item');
+//immagini in automatico
+setInterval(autplay, 3_000);
+
+function autplay() {
+  if (currentItem < domItems.length - 1) {
+    domItems[currentItem].classList.remove('active');
+
+    currentItem++;
+
+    domItems[currentItem].classList.add('active');
+  }
+}
 
 //frecciette di top e bottom
 prev.addEventListener('click', function () {
